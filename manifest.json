@@ -24,8 +24,8 @@
             "delay" : 0
         },
         /* 模块配置 */
+        /* uni-push 2.0 依赖 uniCloud 服务空间，暂不启用；需要推送时在此加回 "Push" : {} */
         "modules" : {
-            "Push" : {},
             "Maps" : {}
         },
         /* 应用发布信息 */
@@ -58,17 +58,9 @@
             /* SDK配置 */
             "sdkConfigs" : {
                 "ad" : {},
-                "push" : {
-                    "unipush" : {
-                        "version" : "2",
-                        "offline" : false,
-                        "icons" : {
-                            "small" : {
-                                "ldpi" : ""
-                            }
-                        }
-                    }
-                },
+                /* push.unipush（uni-push 2.0）已移除：该 SDK 要求项目关联 uniCloud 服务空间，
+                   而当前应用代码未接线云函数。恢复时在此加回：
+                   "push" : { "unipush" : { "version" : "2", "offline" : false, "icons" : { "small" : { "ldpi" : "" } } } } */
                 "maps" : {
                     "tencent" : {
                         "key" : "A6DBZ-KXPLW-JKSRY-ONZF4-CPHY3-K6BL7"
@@ -144,9 +136,6 @@
             "treeShaking" : {
                 "enable" : true
             }
-        },
-        "unipush" : {
-            "enable" : true
         }
     },
     "uniStatistics" : {

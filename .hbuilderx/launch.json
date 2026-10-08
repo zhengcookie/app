@@ -1,27 +1,11 @@
 {
     // launch.json 配置了启动调试时相关设置，configurations下节点名称可为 app-plus/h5/mp-weixin/mp-baidu/mp-alipay/mp-qq/mp-toutiao/mp-360/
     // launchtype项可配置值为local或remote, local代表前端连本地云函数，remote代表前端连云端云函数
+    // 暂未关联 uniCloud 服务空间，故移除 {"type":"uniCloud","provider":"aliyun",...} 配置块，
+    // 避免每次运行都检查服务空间。云函数资料放在 _cloud/uniCloud-aliyun，
+    // 需要恢复时在 configurations 数组首位加回该块并把目录移回项目根。
     "version" : "0.0",
     "configurations" : [
-        {
-            "app" : {
-                "launchtype" : "local"
-            },
-            "app-plus" : {
-                "launchtype" : "remote"
-            },
-            "default" : {
-                "launchtype" : "remote"
-            },
-            "h5" : {
-                "launchtype" : "local"
-            },
-            "mp-weixin" : {
-                "launchtype" : "remote"
-            },
-            "provider" : "aliyun",
-            "type" : "uniCloud"
-        },
         {
             "playground" : "standard",
             "type" : "uni-app:app-ios"

@@ -4,6 +4,9 @@
 		onError(error) { reportAppError(error, 'runtime') },
 		onUnhandledRejection(event) { reportAppError(event?.reason, 'promise') },
 		onLaunch: async function() {
+			// manifest 已关闭 uni-push 2.0；未启用推送模块的平台（如 H5）上该 API 可能不存在，
+			// 先做能力判断，避免 onLaunch 调用不存在的函数报错。
+			if (typeof uni.onPushMessage !== 'function') return;
 			uni.onPushMessage(async (res) => {
 				console.log('收到推送消息==>:', res);
 				if (res.type == 'receive') {  
