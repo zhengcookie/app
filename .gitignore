@@ -11,3 +11,7 @@ output/
 
 .workbuddy-ai/
 tmp/
+
+# uniCloud 与 uni-push 2.0 已停用，相关云函数/模块资料移到 _cloud/ 留档，需要时移回原位即可恢复。
+# 下面这行是 HBuilderX 运行时会重新生成的云服务骨架，不入库。
+_cloud/uniCloud-tcb-hbuilderx-generated/
